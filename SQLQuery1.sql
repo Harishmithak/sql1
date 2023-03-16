@@ -1,0 +1,38 @@
+create database database1
+use database1
+
+
+CREATE TABLE Trainees (
+Trainee_ID INT PRIMARY KEY,
+FIRST_NAME CHAR(25),
+LAST_NAME CHAR(25),
+SALARY INT,
+JOINING_DATE DATETIME,
+DEPARTMENT CHAR(25)
+)
+ 
+insert into Trainees values(1,'HARISHMITHA','K',45000,2020-04-08,'FRONTEND')
+insert into Trainees values(2,'HARITA','N',40000,2020-04-10,'BACKEND'),
+(3,'RANITA','N',30000,2020-03-08,'FRONTEND'),(4,'YAMINI','J',47000,2020-02-05,'BACKEND'),
+(5,'SARAN','A',55000,2019-04-07,'FRONTEND'),(6,'RAJESH','K',40000,2020-01-08,'DEVELOPER'),
+(7,'POOJA','V',30000,2021-04-09,'DESIGNER'),(8,'DINESH','S',20000,2022-06-11,'DEVELOPER'),
+(9,'ARJUN','S',23000,2023-07-15,'DESIGNER'),(10,'PRASATH','K',33000,2020-08-20,'DEVELOPER'),
+(11,'RAJU','V',24000,2022-09-22,'DESIGNER'),(12,'POORNI','M',56000,2019-09-11,'DEVELOPER'),
+(13,'JANI','S',35000,2019-10-25,'DESIGNER'),
+(14,'HARINI','G',39000,2021-02-26,'FRONTEND'),(15,'NIVETHA','M',60000,2022-04-04,'BACKEND'),
+(16,'NANDHINI','K',30000,2020-12-20,'DESIGNER'),
+(17,'ARVIND','A',29000,2022-11-21,'FRONTEND'),(18,'GOWNTHAM','D',37000,2020-04-08,'DESIGNER'),
+(19,'PRABU','V',26000,2021-05-09,'DEVELOPER'),(20,'PRIYA','R',54000,2019-05-23,'DEVELOPER')
+
+SELECT * FROM Trainees
+select * from Trainees where FIRST_NAME LIKE '[J-T]%'
+
+SELECT * FROM Trainees where salary >=20000 and salary<=50000
+select * from Trainees where FIRST_NAME LIKE '%i'
+select distinct SALARY from Trainees 
+SELECT * FROM Trainees where DEPARTMENT ='DESIGNER' OR DEPARTMENT = 'DEVELOPER'
+SELECT * FROM Trainees where Trainee_ID<5
+select * from Trainees order by Trainee_ID offset 5 rows fetch next 10 rows only
+select top 5 with ties * FROM Trainees order by Trainee_ID
+select * from Trainees order by DEPARTMENT DESC
+SELECT * FROM Trainees where LAST_NAME LIKE 'A%'

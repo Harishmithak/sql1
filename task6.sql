@@ -96,7 +96,7 @@ FROM salesman AS s
    --5
 
    select c.customername,c.city ,c.grade,c.customerid,s.name
-    from customer as c
+   from customer as c
    inner join 
    salesman as s
    on s.salesmanid=c.salesmanid order by customerid 
